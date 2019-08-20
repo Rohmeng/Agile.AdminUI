@@ -1,0 +1,48 @@
+﻿@model List<Agile.AdminUI.Models.MenuModel>
+@{
+    Layout = null;
+}
+
+@if (Model.Count > 0)
+{
+    foreach (var item in Model.Where(x => x.MenuLevel == 1))
+    {
+        <li class="@(item.IsActive?"active-item":"") @(item.HasChild?"has-child-item":"") @(item.IsCloseItem?"close-item":"")">
+            <a href="@(item.HasChild?"#":item.MenuUrl)"><i class="@item.MenuIcon" aria-hidden="true"></i><span>@item.MenuName</span></a>
+            @if (item.HasChild)
+            {
+                var childitem = Model.Where(x => x.ParentId == item.Id).ToList();
+                <ul class="nav child-nav level-1">
+                    @foreach (var child1 in childitem)
+                    {
+                        <li class="@(child1.IsActive?"active-item":"") @(child1.HasChild?"has-child-item":"") @(child1.IsCloseItem?"close-item":"")">
+                            <a href="@(child1.HasChild?"#":child1.MenuUrl)">@child1.MenuName</a>
+                            @if (child1.HasChild)
+                            {
+                                var childitem2 = Model.Where(x => x.ParentId == child1.Id).ToList();
+                                <ul class="nav child-nav level-2">
+                                    @foreach (var child2 in childitem2)
+                                    {
+                                        <li class="@(item.IsActive?"active-item":"") @(item.IsCloseItem?"close-item":"")"><a href="@child2.MenuUrl">@child2.MenuName</a></li>
+
+                                    }
+                                </ul>
+                            }
+                        </li>
+                    }
+                </ul>
+            }
+        </li>
+    }
+}
+else
+{
+    <li class="active-item"><a href="/"><i class="fa fa-home" aria-hidden="true"></i><span>首页</span></a></li>
+    @*<li class="has-child-item close-item">
+        <a><i class="fa fa-cubes" aria-hidden="true"></i><span>个人中心</span></a>
+    </li>*@
+    <li class="close-item">
+        <a asp-controller="Basic" asp-action="Menu"><i class="fa fa-pie-chart" aria-hidden="true"></i><span>菜单管理</span></a>
+    </li>
+}
+

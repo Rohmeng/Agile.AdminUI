@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Agile.BaseLib\Agile.BaseLib.csproj" />
+    <ProjectReference Include="..\Agile.Entity\Agile.Entity.csproj" />
+  </ItemGroup>
+
+</Project>

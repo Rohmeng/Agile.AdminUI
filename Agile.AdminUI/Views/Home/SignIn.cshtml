@@ -1,0 +1,78 @@
+﻿@{
+    Layout = null;
+}
+<!doctype html>
+<html lang="en" class="fixed accounts sign-in">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Helsinki</title>
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/vendor/animate.css/animate.css">
+    <link rel="stylesheet" href="/stylesheets/css/style.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="page-body animated slideInDown">
+            <div class="logo">
+                <img alt="logo" src="/images/logo-dark.png" />
+            </div>
+            <div class="box">
+                <div class="panel mb-none">
+                    <div class="panel-content bg-scale-0">
+                        <form method="post" action="/SignIn">
+                            @Html.AntiForgeryToken()
+                            <div class="form-group mt-md">
+                                <span class="input-with-icon">
+                                    <input type="text" class="form-control" name="name" id="name" placeholder="name">
+                                    <i class="fa fa-envelope"></i>
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <span class="input-with-icon">
+                                    <input type="password" class="form-control" name="password" id="password" placeholder="password">
+                                    <i class="fa fa-key"></i>
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <div class="checkbox-custom checkbox-primary">
+                                    <input type="checkbox" id="remember-me" value="option1" checked>
+                                    <label for="remember-me">Remember me</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="hidden" id="returnUrl" name="returnUrl" value="@ViewBag.Url">
+                                <input type="submit" id="btnLogin" class="btn btn-primary btn-block" value="Sign in" />
+                                @*<a href="/" id="btnLogin" class="btn btn-primary btn-block">Sign in</a>*@
+                            </div>
+                            <div class="form-group text-center">
+                                <a href="#">Forgot password?</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/vendor/jquery/jquery-1.12.3.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/vendor/nano-scroller/nano-scroller.js"></script>
+    <script src="/javascripts/template-script.min.js"></script>
+    <script src="/javascripts/template-init.min.js"></script>
+    <script>
+        $(function () {
+            $("#btnLogin").click(function () {
+
+            });
+        });
+    </script>
+</body>
+
+</html>
