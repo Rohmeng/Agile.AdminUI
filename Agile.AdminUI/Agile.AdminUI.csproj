@@ -14,7 +14,7 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\Agile.BaseLib\Agile.BaseLib.csproj" />
+    <ProjectReference Include="..\..\Agile.BaseLib\Agile.BaseLib.csproj" />
     <ProjectReference Include="..\Agile.Entity\Agile.Entity.csproj" />
     <ProjectReference Include="..\Agile.Repository\Agile.Repository.csproj" />
   </ItemGroup>
