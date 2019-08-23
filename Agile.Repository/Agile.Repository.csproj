@@ -5,7 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Agile.BaseLib\Agile.BaseLib.csproj" />
+    <PackageReference Include="Agile.BaseLib" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Agile.Entity\Agile.Entity.csproj" />
   </ItemGroup>
 

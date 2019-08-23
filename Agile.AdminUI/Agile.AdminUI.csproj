@@ -7,6 +7,7 @@
 
 
   <ItemGroup>
+    <PackageReference Include="Agile.BaseLib" Version="1.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
@@ -14,7 +15,6 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Agile.BaseLib\Agile.BaseLib.csproj" />
     <ProjectReference Include="..\Agile.Entity\Agile.Entity.csproj" />
     <ProjectReference Include="..\Agile.Repository\Agile.Repository.csproj" />
   </ItemGroup>
